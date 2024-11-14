@@ -1,13 +1,16 @@
 import { IOpenDataService } from "@/src/application/services/open-data-service.interface";
 import { RowOpenData } from "@/src/entities/open-data-training";
-import { promises as fs } from "fs";
+import fs from "fs";
+import path from "path";
 
 export class OpenDataService implements IOpenDataService {
   async getTrainings(): Promise<RowOpenData[]> {
-    const file = await fs.readFile(
-      process.cwd() + "/src/infrastructure/services/data.json",
-      "utf8"
+    const filePath = path.join(
+      process.cwd(),
+      "/src/infrastructure/services/data.json"
     );
+    const file = fs.readFileSync(filePath, "utf-8");
+
     const data: RowOpenData[] = JSON.parse(file);
     return data;
   }
