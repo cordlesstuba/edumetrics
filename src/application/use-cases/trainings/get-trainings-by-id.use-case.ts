@@ -6,8 +6,6 @@ export type IGetTrainingByIdUseCase = ReturnType<typeof getTrainingByIdUseCase>;
 export const getTrainingByIdUseCase =
   (trainingRepository: ITrainingsRepository) =>
   async (id: string): Promise<Training> => {
-    console.log("getTrainingByIdUseCase", "training");
-
     const training = await trainingRepository.getTrainingById(id);
     if (!training) {
       throw new Error("Training not found");

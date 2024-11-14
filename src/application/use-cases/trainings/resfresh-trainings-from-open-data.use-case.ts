@@ -3,9 +3,9 @@ import { inserEtablishmentSchema } from "@/src/entities/etablishment";
 import { inserTrainingSchema, Training } from "@/src/entities/training";
 import { UAI } from "./const";
 import { IOpenDataService } from "../../services/open-data-service.interface";
-import { ParcoursupService } from "@/src/infrastructure/services/parcoursup.service";
 import { IEtablishmentsRepository } from "../../repositories/etablishments.repository.interface";
 import { ITrainingsRepository } from "../../repositories/trainings.repository.interface";
+import { IParcoursupService } from "../../services/parcoursup.service.interface";
 
 export type IRefreshTrainingsFromOpenDataUseCase = ReturnType<
   typeof refreshTrainingsFromOpenDataUseCase
@@ -14,7 +14,7 @@ export type IRefreshTrainingsFromOpenDataUseCase = ReturnType<
 export const refreshTrainingsFromOpenDataUseCase =
   (
     openDataService: IOpenDataService,
-    parcoursupService: ParcoursupService,
+    parcoursupService: IParcoursupService,
     etablishmentRepository: IEtablishmentsRepository,
     trainingsRepository: ITrainingsRepository
   ) =>
