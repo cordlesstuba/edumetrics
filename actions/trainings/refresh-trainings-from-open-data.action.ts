@@ -13,8 +13,7 @@ export async function refreshTrainingsFromOpenDataAction() {
   } catch (err) {
     console.error("Error: ", err);
     return {
-      error:
-        "An error happened while refreshing data. The developers have been notified. Please try again later.",
+      error: err,
     };
   }
   revalidatePath(`/trainings`);
