@@ -11,9 +11,10 @@ export async function refreshTrainingsFromOpenDataAction() {
 
     await refreshTrainingsFromOpenDataController();
   } catch (err) {
-    console.error("Error: ", err);
+    console.log("Error: ", err);
     return {
-      error: err,
+      error:
+        "An error happened while refreshing data. The developers have been notified. Please try again later.",
     };
   }
   revalidatePath(`/trainings`);
