@@ -5,10 +5,7 @@ import path from "path";
 
 export class OpenDataService implements IOpenDataService {
   async getTrainings(): Promise<RowOpenData[]> {
-    const filePath = path.join(
-      process.cwd(),
-      "/src/infrastructure/services/data.json"
-    );
+    const filePath = path.join(process.cwd(), "/app/data.json");
     const file = fs.readFileSync(filePath, "utf-8");
 
     const data: RowOpenData[] = JSON.parse(file);
