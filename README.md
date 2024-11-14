@@ -25,9 +25,8 @@ Le projet est structuré en dossiers selon les rôles définis par la Clean Arch
 
 ### Frontend
 
-Le frontend de l'application est situé dans le dossier `app` de Next.js et propose deux routes principales :
+Le frontend de l'application est situé dans le dossier `app` de Next.js et propose d'une route principale :
 
-- **/** : Page d'accueil avec un bouton permettant de rafraîchir les données issues d'OpenData.
 - **/trainings** : Affiche la liste des formations avec des fonctionnalités de pagination et de filtrage.
 
 ### Dossier `src`
